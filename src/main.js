@@ -7,4 +7,5 @@ import router from './router';
 import './style.css'
 // import { toPrimitive } from 'core-js/fn/symbol';
 
-createApp(App).use(router).use(createPinia()).mount('#app')
+createApp(App).use(createPinia()).mount('#app')
+// createApp(App).use(router).use(createPinia()).mount('#app')

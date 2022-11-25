@@ -223,7 +223,7 @@
 </template>
 
 <script setup>
-import { onBeforeUnmount, onMounted, watch } from 'vue';
+import { onMounted, watch } from 'vue';
 import LocomotiveScroll from 'locomotive-scroll';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";

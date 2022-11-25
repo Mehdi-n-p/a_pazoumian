@@ -72,13 +72,13 @@ onMounted(() => {
 	}, true);
 }); 
 
-onMounted(async () => {
-  await router.isReady()
-  path = router.currentRoute.value.fullPath;
-  if (path.includes("about")) {
-    statesStore.about = true;
-  }
-});
+// onMounted(async () => {
+//   await router.isReady()
+//   path = router.currentRoute.value.fullPath;
+//   if (path.includes("about")) {
+//     statesStore.about = true;
+//   }
+// });
 
 // On click
 var raycaster = new THREE.Raycaster();
@@ -613,16 +613,16 @@ function scroll_all() {
   }
 }
 
-watch(router.currentRoute, () => {
-  console.log(router.currentRoute.value.fullPath);
-  if (router.currentRoute.value.fullPath.includes('about')) {
+// watch(router.currentRoute, () => {
+//   console.log(router.currentRoute.value.fullPath);
+//   if (router.currentRoute.value.fullPath.includes('about')) {
     
-  }
-  // Do something here...
+//   }
+//   // Do something here...
 
-  // Optionally you can set immediate: true config for the watcher to run on init
-//}, { immediate: true });
-});
+//   // Optionally you can set immediate: true config for the watcher to run on init
+// //}, { immediate: true });
+// });
 
 watch(scroll_progress, () => {
     gsap.to(scene.position, {duration: 0, x: -statesStore.scroll_progress*20, ease: 'none'});
@@ -677,7 +677,7 @@ watch(where, () => {
       statesStore.scroll_progress = 0;
       statesStore.work = active_slide;
       statesStore.work_active = true;
-      router.push({ path: '/work/' + statesStore.work_name[statesStore.work - 1].split(' ').join('_').toLowerCase()});
+      //router.push({ path: '/work/' + statesStore.work_name[statesStore.work - 1].split(' ').join('_').toLowerCase()});
 
       // On détache meshes avant et après de sphere 0 pour rattacher en onComplete une fois terminé, malin !
       scene.attach(meshes[next_slide - 1]);
@@ -715,7 +715,7 @@ watch(where, () => {
     if (statesStore.where === "home") {
       
       statesStore.running = true;
-      router.go(-1);
+      //router.go(-1);
 
       document.getElementById('cross').classList.toggle('cross-active');
 

@@ -32,7 +32,7 @@
 <script setup>
 import { onMounted } from 'vue';
 import { gsap } from "gsap";
-import router from '@/router';
+// import router from '@/router';
 import { useStatesStore } from '@/store/states';
 // eslint-disable-next-line
 const statesStore = useStatesStore();
@@ -47,12 +47,12 @@ function about_text() {
     if (statesStore.about) {
         gsap.to(document.querySelectorAll('#link_menu > div:nth-child(1) > div'), {duration: 0.4, delay: 0, translateY: -120 + "%"});
         gsap.to(document.querySelectorAll('#link_menu > div:nth-child(2) > div'), {duration: 0.4, delay: 0, translateY: 0 + "%"});
-        router.push({ path: '/about' });
+        // router.push({ path: '/about' });
     }
     else if (!statesStore.about) {
         gsap.to(document.querySelectorAll('#link_menu > div:nth-child(1) > div'), {duration: 0.4, delay: 0, translateY: 0 + "%"});
         gsap.to(document.querySelectorAll('#link_menu > div:nth-child(2) > div'), {duration: 0.4, delay: 0, translateY: 120 + "%"});
-        router.go(-1);
+        // router.go(-1);
     }
 }
 </script>
